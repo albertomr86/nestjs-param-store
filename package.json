@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/albertomr86/nestjs-param-store.git"
+    "url": "https://github.com/albertomr86/nestjs-param-store.git"
   },
   "bugs": {
     "url": "https://github.com/albertomr86/nestjs-param-store/issues"
