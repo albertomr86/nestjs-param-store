@@ -5,7 +5,7 @@ This package allows you to configure your NestJS application by loading the conf
 ## Installation
 
 ```bash
-npm install nestjs-param-store
+npm install nestjs-param-store @aws-sdk/client-ssm
 ```
 ## Configuration
 
