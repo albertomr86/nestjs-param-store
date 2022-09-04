@@ -109,7 +109,7 @@ export class PostRepository {
 The `PSConfigService` service exposes the following methods:
 
 - `get(name, defaultValue)`: To retrieve a string configuration.
-- `getBool(name, defaultValue)`: To retrieve a boolean configuration. The following values as considered truly: 'true`, 'True', '1', 'y', 'yes', and 'Yes'.
+- `getBool(name, defaultValue)`: To retrieve a boolean configuration. The following values as considered truly: `true`, `True`, `1`, `y`, `yes`, and `Yes`.
 - `getNumber(name, defaultValue)`: To retrieve a numeric configuration.
 
 ### How does the PSConfigService service resolve the configurations?
