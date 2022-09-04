@@ -1,0 +1,8 @@
+buildspec.yml
+Dockerfile
+package*.json
+tsconfig*.json
+dist
+*.yml
+*.yaml
+*.gql
