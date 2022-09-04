@@ -24,6 +24,14 @@
   "engines": {
     "node": ">= 14"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertomr86/nestjs-param-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/albertomr86/nestjs-param-store/issues"
+  },
+  "homepage": "https://github.com/albertomr86/nestjs-param-store/issues#readme",
   "scripts": {
     "test": "jest --verbose -i --detectOpenHandles",
     "lint": "eslint \"{lib,__tests__}/**/*.ts\" --fix",
