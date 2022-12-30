@@ -14,6 +14,7 @@ export class ParameterStoreService {
 
   public async getParametersByPath(path: string): Promise<Parameter[]> {
     const getParameters = new GetParametersByPathCommand({
+      WithDecryption: true,
       Path: path,
     });
 
