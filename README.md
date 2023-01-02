@@ -1,3 +1,5 @@
+# A fork of [nestjs-param-store](https://github.com/albertomr86/nestjs-param-store)
+
 # NestJS Config AWS Parameter Store
 
 This package allows you to configure your NestJS application by loading the configuration from [AWS SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html).

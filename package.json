@@ -1,8 +1,8 @@
 {
-  "name": "nestjs-param-store",
+  "name": "nestjs-ssm",
   "version": "1.0.0",
   "description": "Configure your NestJS application with AWS Parameter Store",
-  "author": "Alberto Menendez Romero <albertomr86@gmail.com>",
+  "author": "Vladyslav Zavalykhatko <vladhatko@gmail.com>",
   "keywords": [
     "nestjs",
     "nest.js",
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/albertomr86/nestjs-param-store.git"
+    "url": "https://github.com/Hatko/nestjs-param-store.git"
   },
   "bugs": {
-    "url": "https://github.com/albertomr86/nestjs-param-store/issues"
+    "url": "https://github.com/Hatko/nestjs-param-store/issues"
   },
-  "homepage": "https://github.com/albertomr86/nestjs-param-store/issues#readme",
+  "homepage": "https://github.com/Hatko/nestjs-param-store/issues#readme",
   "scripts": {
     "test": "jest --verbose -i --detectOpenHandles",
     "lint": "eslint \"{lib,__tests__}/**/*.ts\" --fix",
