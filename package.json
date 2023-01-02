@@ -1,6 +1,6 @@
 {
   "name": "nestjs-ssm",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Configure your NestJS application with AWS Parameter Store",
   "author": "Vladyslav Zavalykhatko <vladhatko@gmail.com>",
   "keywords": [
