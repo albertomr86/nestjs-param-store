@@ -7,6 +7,7 @@ This package allows you to configure your NestJS application by loading the conf
 ```bash
 npm install nestjs-param-store @aws-sdk/client-ssm
 ```
+
 ## Configuration
 
 ### Static configuration
@@ -19,6 +20,7 @@ import { PSConfigModule } from 'nestjs-param-store';
   imports: [
     PSConfigModule.register({
       ssmParamStorePath: '/production/services/my-service',
+      ssmDecryptParams: true,
       ssmClientOptions: {
         region: 'us-east-1',
       },
@@ -45,6 +47,7 @@ import { PSConfigModule } from 'nestjs-param-store';
       imports: [ConfigModule],
       useFactory: async (config: ConfigService<EnvironmentVariables>) => ({
         ssmParamStorePath: config.get<string>('APP_CONFIG_PATH'),
+        ssmDecryptParams: true,
         ssmClientOptions: {
           region: config.get<string>('AWS_REGION'),
         },

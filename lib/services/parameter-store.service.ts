@@ -12,9 +12,13 @@ export class ParameterStoreService {
     @Inject(SSM_PS_CLIENT) private readonly client: SSMClient,
   ) {}
 
-  public async getParametersByPath(path: string): Promise<Parameter[]> {
+  public async getParametersByPath(
+    path: string,
+    decrypt = false,
+  ): Promise<Parameter[]> {
     const getParameters = new GetParametersByPathCommand({
       Path: path,
+      WithDecryption: decrypt,
     });
 
     const { Parameters = [] } = await this.client.send(getParameters);

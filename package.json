@@ -1,6 +1,6 @@
 {
   "name": "nestjs-param-store",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Configure your NestJS application with AWS Parameter Store",
   "author": "Alberto Menendez Romero <albertomr86@gmail.com>",
   "keywords": [
