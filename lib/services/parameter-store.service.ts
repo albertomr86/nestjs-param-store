@@ -16,13 +16,22 @@ export class ParameterStoreService {
     path: string,
     decrypt = false,
   ): Promise<Parameter[]> {
-    const getParameters = new GetParametersByPathCommand({
-      Path: path,
-      WithDecryption: decrypt,
-    });
+    let allParameters: Parameter[] = [];
+    let nextParametersToken: string | undefined;
+    do {
+      const getParameters = new GetParametersByPathCommand({
+        Path: path,
+        WithDecryption: decrypt,
+        NextToken: nextParametersToken,
+      });
 
-    const { Parameters = [] } = await this.client.send(getParameters);
+      const { Parameters = [], NextToken } = await this.client.send(
+        getParameters,
+      );
+      allParameters = allParameters.concat(Parameters);
+      nextParametersToken = NextToken;
+    } while (Boolean(nextParametersToken));
 
-    return Parameters;
+    return allParameters;
   }
 }
