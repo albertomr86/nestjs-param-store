@@ -21,6 +21,7 @@ import { PSConfigModule } from 'nestjs-param-store';
     PSConfigModule.register({
       ssmParamStorePath: '/production/services/my-service',
       ssmDecryptParams: true,
+      ssmRecursive: false,
       ssmClientOptions: {
         region: 'us-east-1',
       },
@@ -48,6 +49,7 @@ import { PSConfigModule } from 'nestjs-param-store';
       useFactory: async (config: ConfigService<EnvironmentVariables>) => ({
         ssmParamStorePath: config.get<string>('APP_CONFIG_PATH'),
         ssmDecryptParams: true,
+        ssmRecursive: false,
         ssmClientOptions: {
           region: config.get<string>('AWS_REGION'),
         },
@@ -58,6 +60,15 @@ import { PSConfigModule } from 'nestjs-param-store';
 })
 export class AppModule {}
 ```
+
+## Options
+
+| Option            	| Required 	| Default     	| Description                                                       	|
+|-------------------	|----------	|-------------	|-------------------------------------------------------------------	|
+| ssmParamStorePath 	| Yes      	|             	| The hierarchy for the parameter                                   	|
+| ssmDecryptParams  	| No       	| `false`     	| Retrieve all parameters in a hierarchy with their value decrypted 	|
+| ssmRecursive      	| No       	| `false`     	| Retrieve all parameters within a hierarchy                        	|
+| ssmClientOptions  	| No       	| `undefined` 	| Options to pass to the underlying SSM client                      	|
 
 ## Services
 
@@ -171,4 +182,27 @@ Example of output:
       "DataType": "text"
   }
 ]
+```
+
+## Troubleshooting
+
+### Empty list of parameters returned
+
+This happens when `recursive` is `false` and the specified path does not resolve the final level in the hierarchy.
+
+[Reference: GetParametersByPath](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_GetParametersByPath.html#API_GetParametersByPath_RequestSyntax)
+
+```typescript
+import { Module } from '@nestjs/common';
+import { PSConfigModule } from 'nestjs-param-store';
+
+@Module({
+  imports: [
+    PSConfigModule.register({
+      ssmParamStorePath: '/production',
+      ssmRecursive: true,   // <-- specify recursively
+    }),
+  ],
+})
+export class AppModule {}
 ```
