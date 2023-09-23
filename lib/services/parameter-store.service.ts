@@ -15,6 +15,7 @@ export class ParameterStoreService {
   public async getParametersByPath(
     path: string,
     decrypt = false,
+    recursive = false,
   ): Promise<Parameter[]> {
     let allParameters: Parameter[] = [];
     let nextParametersToken: string | undefined;
@@ -23,6 +24,7 @@ export class ParameterStoreService {
         Path: path,
         WithDecryption: decrypt,
         NextToken: nextParametersToken,
+        Recursive: recursive,
       });
 
       const { Parameters = [], NextToken } = await this.client.send(

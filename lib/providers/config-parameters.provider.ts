@@ -12,6 +12,7 @@ export const configParametersProvider: FactoryProvider<PSConfigParameters> = {
     return psService.getParametersByPath(
       configOptions.ssmParamStorePath,
       configOptions.ssmDecryptParams ?? false,
+      configOptions.ssmRecursive ?? false,
     );
   },
   inject: [PS_CONFIG_OPTIONS, ParameterStoreService],
