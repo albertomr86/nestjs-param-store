@@ -1,5 +1,10 @@
 # NestJS Config AWS Parameter Store
 
+[![NPM](https://img.shields.io/npm/v/nestjs-param-store.svg)](https://www.npmjs.com/package/nestjs-otel)
+![Package License](https://img.shields.io/github/license/albertomr86/nestjs-param-store)
+![Build Status](https://github.com/albertomr86/nestjs-param-store/workflows/ci/badge.svg)
+[![codecov](https://codecov.io/gh/albertomr86/nestjs-param-store/graph/badge.svg?token=WT83BVBOZE)](https://codecov.io/gh/albertomr86/nestjs-param-store)
+
 This package allows you to configure your NestJS application by loading the configuration from [AWS SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html).
 
 ## Installation
