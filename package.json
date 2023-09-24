@@ -33,11 +33,11 @@
   },
   "homepage": "https://github.com/albertomr86/nestjs-param-store/issues#readme",
   "scripts": {
-    "test": "jest --verbose -i --detectOpenHandles",
-    "lint": "eslint \"{lib,__tests__}/**/*.ts\" --fix",
+    "lint": "eslint \"lib/**/*.ts\"",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json",
-    "format": "prettier --write \"lib/**/*.ts\" \"test/**/*.ts\""
+    "format": "prettier --write \"lib/**/*.ts\"",
+    "test": "jest --verbose -i --detectOpenHandles --coverage"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
@@ -52,6 +52,8 @@
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
+    "aws-sdk-client-mock": "^3.0.0",
+    "aws-sdk-client-mock-jest": "^3.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",

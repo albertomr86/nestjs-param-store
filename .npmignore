@@ -1,6 +1,7 @@
 # source
 lib
 tests
+coverage
 index.ts
 package-lock.json
 tslint.json
@@ -9,6 +10,8 @@ tsconfig.json
 .commitlintrc.json
 .eslintignore
 .eslintrc.js
+.nvmrc
+nest-cli.json
 
 # github
 .github
