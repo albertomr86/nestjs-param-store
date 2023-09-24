@@ -1,6 +1,6 @@
 # NestJS Config AWS Parameter Store
 
-[![NPM](https://img.shields.io/npm/v/nestjs-param-store.svg)](https://www.npmjs.com/package/nestjs-otel)
+[![NPM](https://img.shields.io/npm/v/nestjs-param-store.svg)](https://www.npmjs.com/package/nestjs-param-store)
 ![Package License](https://img.shields.io/github/license/albertomr86/nestjs-param-store)
 ![Build Status](https://github.com/albertomr86/nestjs-param-store/workflows/ci/badge.svg)
 [![codecov](https://codecov.io/gh/albertomr86/nestjs-param-store/graph/badge.svg?token=WT83BVBOZE)](https://codecov.io/gh/albertomr86/nestjs-param-store)
