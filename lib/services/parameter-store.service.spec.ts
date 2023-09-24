@@ -13,7 +13,7 @@ import { mockData } from '../../tests/mockdata';
 
 describe('ParameterStoreService', () => {
   let parameterStoreService: ParameterStoreService;
-  let ssmClient: AwsStub<SSMClient, unknown, unknown>;
+  let ssmClient: AwsStub<SSMClient, any, any>;
 
   beforeEach(async () => {
     const moduleRef = await Test.createTestingModule({
