@@ -26,7 +26,9 @@ describe('configParametersProvider#PS_CONFIG_PARAMETERS', () => {
       ],
     }).compile();
 
-    parameterStoreService = moduleRef.get<ParameterStoreService>(ParameterStoreService);
+    parameterStoreService = moduleRef.get<ParameterStoreService>(
+      ParameterStoreService,
+    );
   });
 
   it('should hold all parameters', () => {

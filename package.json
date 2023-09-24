@@ -33,10 +33,10 @@
   },
   "homepage": "https://github.com/albertomr86/nestjs-param-store/issues#readme",
   "scripts": {
-    "lint": "eslint \"{lib,__tests__}/**/*.ts\" --fix",
+    "lint": "eslint \"lib/**/*.ts\"",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json",
-    "format": "prettier --write \"lib/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"lib/**/*.ts\"",
     "test": "jest --verbose -i --detectOpenHandles --coverage"
   },
   "devDependencies": {

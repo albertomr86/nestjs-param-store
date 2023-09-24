@@ -19,41 +19,55 @@ describe('PSConfigModule', () => {
 
   describe('register()', () => {
     beforeEach(async () => {
-      const testHarness = await createTestHarness(PSConfigModule.register(moduleOptions));
+      const testHarness = await createTestHarness(
+        PSConfigModule.register(moduleOptions),
+      );
       app = testHarness.app;
     });
 
     it('should fetch all parameters when loading', () => {
-      const parameters = app.get<typeof PS_CONFIG_PARAMETERS, PSConfigParameters>(PS_CONFIG_PARAMETERS);
+      const parameters = app.get<
+        typeof PS_CONFIG_PARAMETERS,
+        PSConfigParameters
+      >(PS_CONFIG_PARAMETERS);
       expect(parameters).toBeInstanceOf(Array<Parameter>);
       expect(parameters).toHaveLength(mockData.length);
     });
 
     it('should load the module with options', () => {
-      expect(app.get<PSConfigOptions>(PS_CONFIG_OPTIONS)).toMatchObject(moduleOptions);
+      expect(app.get<PSConfigOptions>(PS_CONFIG_OPTIONS)).toMatchObject(
+        moduleOptions,
+      );
     });
   });
 
   describe('registerAsync()', () => {
     beforeEach(async () => {
-      const testHarness = await createTestHarness(PSConfigModule.registerAsync({
-        useFactory: () => moduleOptions,
-      }));
+      const testHarness = await createTestHarness(
+        PSConfigModule.registerAsync({
+          useFactory: () => moduleOptions,
+        }),
+      );
       app = testHarness.app;
     });
 
     it('should fetch all parameters when loading', () => {
-      const parameters = app.get<typeof PS_CONFIG_PARAMETERS, PSConfigParameters>(PS_CONFIG_PARAMETERS);
+      const parameters = app.get<
+        typeof PS_CONFIG_PARAMETERS,
+        PSConfigParameters
+      >(PS_CONFIG_PARAMETERS);
       expect(parameters).toBeInstanceOf(Array<Parameter>);
       expect(parameters).toHaveLength(mockData.length);
     });
 
     it('should load the module with options', () => {
-      expect(app.get<PSConfigOptions>(PS_CONFIG_OPTIONS)).toMatchObject(moduleOptions);
+      expect(app.get<PSConfigOptions>(PS_CONFIG_OPTIONS)).toMatchObject(
+        moduleOptions,
+      );
     });
   });
 
-  afterEach(async() => {
+  afterEach(async () => {
     if (app) {
       await app.close();
     }

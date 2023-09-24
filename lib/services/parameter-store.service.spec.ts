@@ -1,5 +1,9 @@
 import 'aws-sdk-client-mock-jest';
-import { SSMClient, Parameter, GetParametersByPathCommand } from '@aws-sdk/client-ssm';
+import {
+  SSMClient,
+  Parameter,
+  GetParametersByPathCommand,
+} from '@aws-sdk/client-ssm';
 import { AwsStub } from 'aws-sdk-client-mock';
 import { Test } from '@nestjs/testing';
 import { ParameterStoreService } from './parameter-store.service';
@@ -31,11 +35,18 @@ describe('ParameterStoreService', () => {
       const totalItems = mockData.length;
       const totalPages = Math.ceil(totalItems / 10);
 
-      const results = await parameterStoreService.getParametersByPath('/', true, true);
+      const results = await parameterStoreService.getParametersByPath(
+        '/',
+        true,
+        true,
+      );
 
       expect(results).toBeInstanceOf(Array<Parameter>);
       expect(results).toHaveLength(totalItems);
-      expect(ssmClient).toHaveReceivedCommandTimes(GetParametersByPathCommand, totalPages);
+      expect(ssmClient).toHaveReceivedCommandTimes(
+        GetParametersByPathCommand,
+        totalPages,
+      );
     });
   });
 });
